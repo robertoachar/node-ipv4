@@ -1,0 +1,34 @@
+{
+  "name": "node-ipv4",
+  "version": "1.0.0",
+  "description": "node-ipv4 project.",
+  "author": "Roberto Achar <robertoachar@gmail.com>",
+  "homepage": "https://github.com/robertoachar/node-ipv4#readme",
+  "keywords": [
+    "calculator",
+    "cidr",
+    "ip",
+    "ipaddress",
+    "ipv4",
+    "mask",
+    "net",
+    "netmask",
+    "network",
+    "subnet"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertoachar/node-ipv4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robertoachar/node-ipv4/issues"
+  },
+  "license": "MIT"
+}
