@@ -1,6 +1,6 @@
 {
   "name": "node-ipv4",
-  "description": "node-ipv4 project.",
+  "description": "A package to calculate subnet masks.",
   "authors": [
     "Roberto Achar <robertoachar@gmail.com>"
   ],

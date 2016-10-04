@@ -1,7 +1,7 @@
 {
   "name": "node-ipv4",
   "version": "1.0.0",
-  "description": "node-ipv4 project.",
+  "description": "A package to calculate subnet masks.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-ipv4#readme",
   "keywords": [
