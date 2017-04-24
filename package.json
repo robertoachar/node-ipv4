@@ -22,6 +22,7 @@
     "index.js"
   ],
   "scripts": {
+    "lint": "eslint index.js lib/*.js",
     "test": "mocha test.js"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "url": "https://github.com/robertoachar/node-ipv4/issues"
   },
   "devDependencies": {
+    "eslint": "3.19.0",
     "should": "11.1.0"
   },
   "license": "MIT"
