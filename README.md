@@ -1,33 +1,31 @@
 # node-ipv4
-A package to calculate subnet masks.
+
+> A package to calculate subnet masks.
 
 ## Table of contents
 
-- [Quick start](#quick-start)
-- [Quick examples](#quick-examples)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
 - [Author](#author)
 - [License](#license)
 
-## Quick start
+## Prerequisites
 
-- Clone de repo: `git clone https://github.com/robertoachar/node-ipv4.git`
-- Install with [npm](https://www.npmjs.com): `npm install node-ipv4`
-- Install with [bower](https://bower.io): `bower install node-ipv4`
+This project have dependencies that require Node 4 or higher, together with NPM 3 or higher.
 
-### What's included
+* Install [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/)
 
-```
-node-ipv4/
-├── lib/
-│   ├── address.js
-│   ├── convert.js
-│   ├── ipv4.js
-└── index.js
+## Installation
+
+```bash
+$ npm install --save node-ipv4
 ```
 
-## Quick examples
+## Usage
 
-## Node.js
+### Quick Example
 
 ```javascript
 'use strict';
@@ -42,6 +40,7 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 ```
 
 ### Output
+
 ```json
 {
   "cidr": 16,
@@ -73,10 +72,28 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 }
 ```
 
-## Author
+## Development
 
-Roberto Achar
+* Install dependencies
+
+```bash
+$ npm install
+```
+
+* Linting code
+
+```bash
+$ npm run lint
+```
+
+* Running unit tests
+
+```bash
+$ npm test
+```
+
+## Author
+[Roberto Achar](https://twitter.com/RobertoAchar)
 
 ## License
-
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](https://github.com/robertoachar/node-ipv4/blob/master/LICENSE)
