@@ -11,9 +11,9 @@ function toBinary(value) {
  * toBytes
  */
 function toBytes(value) {
-  var address = value % 256;
+  let address = value % 256;
 
-  for (var i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 3; i++) {
     value = Math.floor(value / 256);
 
     address = value % 256 + '.' + address;
@@ -26,7 +26,7 @@ function toBytes(value) {
  * toDecimal
  */
 function toDecimal(address) {
-  var octet = address.split('.');
+  const octet = address.split('.');
 
   return ((((((+octet[0]) * 256) + (+octet[1])) * 256) + (+octet[2])) * 256) + (+octet[3]);
 }

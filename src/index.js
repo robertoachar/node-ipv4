@@ -3,7 +3,7 @@
 /**
  * Dependencies
  */
-var IPv4 = require('./lib/ipv4');
+const IPv4 = require('./lib/ipv4');
 
 /**
  * Constants
@@ -18,7 +18,7 @@ function parse(address, cidr, done) {
     return done('Address is not a string');
   }
 
-  var match = address.match(regex);
+  const match = address.match(regex);
 
   if (!match) {
     return done('Invalid address');
