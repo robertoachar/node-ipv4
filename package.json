@@ -16,14 +16,10 @@
     "network",
     "subnet"
   ],
-  "main": "index.js",
-  "files": [
-    "lib",
-    "index.js"
-  ],
+  "main": "src/index.js",
   "scripts": {
-    "lint": "eslint index.js lib/*.js",
-    "test": "mocha test.js"
+    "lint": "eslint src/**/*.js",
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +30,7 @@
   },
   "devDependencies": {
     "eslint": "3.19.0",
+    "mocha": "3.3.0",
     "should": "11.1.0"
   },
   "license": "MIT"

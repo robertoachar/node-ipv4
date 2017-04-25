@@ -3,7 +3,7 @@
 /**
  * Dependencies
  */
-var index = require('./index');
+var index = require('../src/index');
 var should = require('should');
 
 /**

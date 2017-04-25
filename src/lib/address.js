@@ -3,7 +3,7 @@
 /**
  * Dependencies
  */
-var convert = require('./convert');
+const convert = require('./convert');
 
 /**
  * Constructor
