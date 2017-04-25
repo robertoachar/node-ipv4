@@ -3,6 +3,7 @@
 > A package to calculate subnet masks.
 
 [![Build Status][travis-badge]][travis-badge-url]
+[![Build Status][appveyor-badge]][appveyor-badge-url]
 [![Dependency Status][david-badge]][david-badge-url]
 [![devDependency Status][david-dev-badge]][david-dev-badge-url]
 [![npm][npm-badge]][npm-badge-url]
