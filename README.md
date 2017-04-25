@@ -2,6 +2,12 @@
 
 > A package to calculate subnet masks.
 
+[![Build Status][travis-badge]][travis-badge-url]
+[![Build Status][appveyor-badge]][appveyor-badge-url]
+[![Dependency Status][david-badge]][david-badge-url]
+[![devDependency Status][david-dev-badge]][david-dev-badge-url]
+[![npm][npm-badge]][npm-badge-url]
+
 ## Table of contents
 
 - [Prerequisites](#prerequisites)
@@ -97,3 +103,14 @@ $ npm test
 
 ## License
 [MIT](https://github.com/robertoachar/node-ipv4/blob/master/LICENSE)
+
+[travis-badge]: https://travis-ci.org/robertoachar/node-ipv4.svg?branch=master
+[travis-badge-url]: https://travis-ci.org/robertoachar/node-ipv4
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/sorbway8eupp739h?svg=true
+[appveyor-badge-url]: https://ci.appveyor.com/project/robertoachar/node-ipv4
+[david-badge]: https://david-dm.org/robertoachar/node-ipv4.svg
+[david-badge-url]: https://david-dm.org/robertoachar/node-ipv4
+[david-dev-badge]: https://david-dm.org/robertoachar/node-ipv4/dev-status.svg
+[david-dev-badge-url]: https://david-dm.org/robertoachar/node-ipv4?type=dev
+[npm-badge]: https://img.shields.io/npm/v/node-ipv4.svg
+[npm-badge-url]: https://www.npmjs.com/package/node-ipv4
