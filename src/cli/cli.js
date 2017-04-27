@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
-
-/**
- * Dependencies
- */
 const pkg = require('../../package.json');
 const program = require('commander');
-const ipv4 = require('../index');
+const ipv4 = require('../../dist/main.bundle');
 
 program
   .version(pkg.version)

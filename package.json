@@ -16,14 +16,17 @@
     "network",
     "subnet"
   ],
-  "main": "dist/index.bundle.js",
-  "bin": "src/cli/cli.js",
+  "main": "dist/main.bundle.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "babel": "babel --watch --presets es2015 source --out-dir dist",
-    "dev": "nodemon source/run.js",
+    "build": "webpack",
     "lint": "eslint src/**/*.js",
-    "map": "source-map-explorer dist/index.bundle.js dist/index.bundle.js.map",
-    "test": "mocha -w ./test/test.js"
+    "map": "source-map-explorer dist/main.bundle.js dist/main.bundle.js.map",
+    "test": "npm run build && mocha ./test/**.js",
+    "test:w": "mocha -w ./test/**.js",
+    "webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -36,14 +39,15 @@
     "commander": "2.9.0"
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
     "babel-preset-es2015": "6.24.1",
     "eslint": "3.19.0",
     "mocha": "3.3.0",
     "nodemon": "1.11.0",
     "should": "11.2.1",
-    "source-map-explorer": "1.3.3"
+    "source-map-explorer": "1.3.3",
+    "webpack": "2.4.1"
   },
   "license": "MIT"
 }
