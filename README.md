@@ -123,7 +123,7 @@ IPv4 {
 var ipv4 = require('node-ipv4');
 
 ipv4.parse('192.168.1.1', 16, function (err, subnet) {
-    if (err) console.error(err);
+    if (err) return console.error(err);
 
     console.log(subnet);
 });

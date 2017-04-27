@@ -1,20 +1,14 @@
 'use strict';
 
-/**
- * Dependencies
- */
-var index = require('../src/index');
+var main = require('../dist/main.bundle');
 var should = require('should');
 
-/**
- * Validation
- */
 describe('VALIDATION', function () {
 
   describe('should not be able to parse with an invalid or empty address', function () {
 
     it('undefined value', function (done) {
-      index.parse(undefined, undefined, function (err, ipv4) {
+      main.parse(undefined, undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -23,7 +17,7 @@ describe('VALIDATION', function () {
     });
 
     it('null value', function (done) {
-      index.parse(null, undefined, function (err, ipv4) {
+      main.parse(null, undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -32,7 +26,7 @@ describe('VALIDATION', function () {
     });
 
     it('empty address', function (done) {
-      index.parse('', undefined, function (err, ipv4) {
+      main.parse('', undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -41,7 +35,7 @@ describe('VALIDATION', function () {
     });
 
     it('address with spaces', function (done) {
-      index.parse(' ', undefined, function (err, ipv4) {
+      main.parse(' ', undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -50,7 +44,7 @@ describe('VALIDATION', function () {
     });
 
     it('invalid address', function (done) {
-      index.parse('0.0.0.256', undefined, function (err, ipv4) {
+      main.parse('0.0.0.256', undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -63,7 +57,7 @@ describe('VALIDATION', function () {
   describe('should not be able to parse with an invalid cidr', function () {
 
     it('undefined value', function (done) {
-      index.parse('0.0.0.0', undefined, function (err, ipv4) {
+      main.parse('0.0.0.0', undefined, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -72,7 +66,7 @@ describe('VALIDATION', function () {
     });
 
     it('null value', function (done) {
-      index.parse('0.0.0.0', null, function (err, ipv4) {
+      main.parse('0.0.0.0', null, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -81,7 +75,7 @@ describe('VALIDATION', function () {
     });
 
     it('string value', function (done) {
-      index.parse('0.0.0.0', '0', function (err, ipv4) {
+      main.parse('0.0.0.0', '0', function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -90,7 +84,7 @@ describe('VALIDATION', function () {
     });
 
     it('invalid cidr', function (done) {
-      index.parse('0.0.0.0', 33, function (err, ipv4) {
+      main.parse('0.0.0.0', 33, function (err, ipv4) {
         should.exist(err);
         should.not.exist(ipv4);
 
@@ -102,13 +96,12 @@ describe('VALIDATION', function () {
 
 });
 
-// IPv4
 describe('IPv4', function () {
 
   describe('should be able to parse with a valid address and cidr', function () {
 
     it('192.168.1.1/8', function (done) {
-      index.parse('192.168.1.1', 8, function (err, ipv4) {
+      main.parse('192.168.1.1', 8, function (err, ipv4) {
         should.not.exist(err);
         should.exist(ipv4);
 
@@ -140,7 +133,7 @@ describe('IPv4', function () {
     });
 
     it('192.168.1.1/16', function (done) {
-      index.parse('192.168.1.1', 16, function (err, ipv4) {
+      main.parse('192.168.1.1', 16, function (err, ipv4) {
         should.not.exist(err);
         should.exist(ipv4);
 
@@ -172,7 +165,7 @@ describe('IPv4', function () {
     });
 
     it('192.168.1.1/24', function (done) {
-      index.parse('192.168.1.0', 24, function (err, ipv4) {
+      main.parse('192.168.1.0', 24, function (err, ipv4) {
         should.not.exist(err);
         should.exist(ipv4);
 
@@ -204,7 +197,7 @@ describe('IPv4', function () {
     });
 
     it('192.168.1.1/32', function (done) {
-      index.parse('192.168.1.1', 32, function (err, ipv4) {
+      main.parse('192.168.1.1', 32, function (err, ipv4) {
         should.not.exist(err);
         should.exist(ipv4);
 
