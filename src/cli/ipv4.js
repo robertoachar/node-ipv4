@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-const pkg = require('../../package.json');
 const program = require('commander');
-const ipv4 = require('../../dist/main.bundle');
+
+const ipv4 = require('../');
+const pkg = require('../../package.json');
 
 program
   .version(pkg.version)

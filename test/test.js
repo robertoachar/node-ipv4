@@ -1,6 +1,6 @@
 'use strict';
 
-var main = require('../dist/main.bundle');
+var main = require('../src/index');
 var should = require('should');
 
 describe('VALIDATION', function () {

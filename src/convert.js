@@ -1,29 +1,27 @@
-export default class Convert {
+'use strict';
 
-  static toBinary(value) {
-    return value.toString(2);
+module.exports.toBinary = (value) => {
+  return value.toString(2);
+};
+
+module.exports.toBytes = (value) => {
+  let address = value % 256;
+
+  for (let i = 1; i <= 3; i++) {
+    value = Math.floor(value / 256);
+
+    address = value % 256 + '.' + address;
   }
 
-  static toBytes(value) {
-    let address = value % 256;
+  return address;
+};
 
-    for (let i = 1; i <= 3; i++) {
-      value = Math.floor(value / 256);
+module.exports.toDecimal = (address) => {
+  const octet = address.split('.');
 
-      address = value % 256 + '.' + address;
-    }
+  return ((((((+octet[0]) * 256) + (+octet[1])) * 256) + (+octet[2])) * 256) + (+octet[3]);
+};
 
-    return address;
-  }
-
-  static toDecimal(address) {
-    const octet = address.split('.');
-
-    return ((((((+octet[0]) * 256) + (+octet[1])) * 256) + (+octet[2])) * 256) + (+octet[3]);
-  }
-
-  static toHexadecimal(value) {
-    return value.toString(16).toUpperCase();
-  }
-
-}
+module.exports.toHexadecimal = (value) => {
+  return value.toString(16).toUpperCase();
+};

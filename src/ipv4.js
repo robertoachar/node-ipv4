@@ -1,23 +1,29 @@
-import IP from './ip';
-import Convert from './convert';
+'use strict';
 
-export default class IPv4 {
+var Address = require('./address');
+var convert = require('./convert');
 
-  constructor(address, cidr) {
-    const MAX_CIDR = 32;
+const MAX_CIDR = 32;
 
-    const _address = Convert.toDecimal(address);
-    const _cidr = cidr > 0 ? cidr : MAX_CIDR;
-    const _size = Math.pow(2, MAX_CIDR - _cidr);
-    const _netmask = Math.pow(2, MAX_CIDR) - _size;
-    const _first = (_address & _netmask) >>> 0;
-    const _last = (_address | ~_netmask) >>> 0;
+function IPv4(address, cidr) {
+  var _address = convert.toDecimal(address);
 
-    this.cidr = _cidr;
-    this.size = _size;
-    this.address = new IP(_address);
-    this.netmask = new IP(_netmask);
-    this.first = new IP(_first);
-    this.last = new IP(_last);
-  }
+  var _cidr = cidr > 0 ? cidr : MAX_CIDR;
+
+  var _size = Math.pow(2, MAX_CIDR - _cidr);
+
+  var _netmask = Math.pow(2, MAX_CIDR) - _size;
+
+  var _first = (_address & _netmask) >>> 0;
+
+  var _last = (_address | ~_netmask) >>> 0;
+
+  this.cidr = _cidr;
+  this.size = _size;
+  this.address = new Address(_address);
+  this.netmask = new Address(_netmask);
+  this.first = new Address(_first);
+  this.last = new Address(_last);
 }
+
+module.exports = IPv4;
