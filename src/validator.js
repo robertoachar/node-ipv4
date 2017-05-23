@@ -1,16 +1,18 @@
-export default class Validator {
+'use strict';
 
-  isNumber(value) {
-    if (typeof value !== 'number') return false;
+module.exports.isCidr = (cidr) => {
+  if (typeof cidr !== 'number') return false;
 
-    return true;
-  }
+  return (cidr >= 0 && cidr <= 32);
+};
 
-  isString(value) {
-    if (typeof value !== 'string') return false;
-    if (value.trim() === '') return false;
+module.exports.isIp = (address) => {
+  if (typeof address !== 'string') return false;
+  if (address.trim() === '') return false;
 
-    return true;
-  }
+  const regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/g;
 
-}
+  const match = address.match(regex);
+
+  return (match ? true : false);
+};
