@@ -8,13 +8,11 @@ module.exports.parse = (address, cidr, done) => {
     return done('Invalid address');
   }
 
-  if (cidr < 0 || cidr > 32) {
+  if (!validator.isCidr(cidr)) {
     return done('Invalid cidr');
   }
 
   const ipv4 = new IPv4(address, cidr);
 
-  if (done) {
-    return done(null, ipv4);
-  }
+  return done(null, ipv4);
 };

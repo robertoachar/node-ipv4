@@ -22,12 +22,12 @@
     "src"
   ],
   "scripts": {
-    "build": "webpack",
-    "lint": "eslint src/**/*.js",
-    "map": "source-map-explorer dist/main.bundle.js dist/main.bundle.js.map",
-    "test": "mocha ./test/**.js",
-    "test:w": "mocha -w ./test/**.js",
-    "webpack": "webpack --watch"
+    "coverage": "jest --colors --coverage",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "jest": "jest --colors --verbose",
+    "lint": "eslint src/**/*.js test/**/*.js",
+    "start": "nodemon sample/sample.js",
+    "test": "npm run lint && npm run jest"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,8 @@
     "commander": "2.9.0"
   },
   "devDependencies": {
+    "@types/jest": "19.2.3",
+    "coveralls": "2.13.1",
     "eslint": "3.19.0",
     "jest": "20.0.3",
     "nodemon": "1.11.0"

@@ -1,22 +1,22 @@
 'use strict';
 
-var Address = require('./address');
-var convert = require('./convert');
+const Address = require('./address');
+const convert = require('./convert');
 
 const MAX_CIDR = 32;
 
 function IPv4(address, cidr) {
-  var _address = convert.toDecimal(address);
+  const _address = convert.toDecimal(address);
 
-  var _cidr = cidr > 0 ? cidr : MAX_CIDR;
+  const _cidr = cidr;
 
-  var _size = Math.pow(2, MAX_CIDR - _cidr);
+  const _size = Math.pow(2, MAX_CIDR - _cidr);
 
-  var _netmask = Math.pow(2, MAX_CIDR) - _size;
+  const _netmask = Math.pow(2, MAX_CIDR) - _size;
 
-  var _first = (_address & _netmask) >>> 0;
+  const _first = (_address & _netmask) >>> 0;
 
-  var _last = (_address | ~_netmask) >>> 0;
+  const _last = (_address | ~_netmask) >>> 0;
 
   this.cidr = _cidr;
   this.size = _size;
