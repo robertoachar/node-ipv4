@@ -1,5 +1,3 @@
-'use strict';
-
 const IPv4 = require('./ipv4');
 const validator = require('./validator');
 

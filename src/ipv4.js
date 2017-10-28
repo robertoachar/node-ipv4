@@ -1,5 +1,3 @@
-'use strict';
-
 const Address = require('./address');
 const convert = require('./convert');
 

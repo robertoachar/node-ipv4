@@ -17,7 +17,7 @@ This package provides the following features:
 * Provides the address, size, netmask, first and last addresses.
 * Each address provides decimal, binary and hexadecimal values.
 
-## Installation
+# Installation
 
 There are two ways to install `node-ipv4`: globally and locally.
 
@@ -37,16 +37,16 @@ To install locally:
 $ npm install --save node-ipv4
 ```
 
-## Usage
+# Usage
 
 There are two ways to use `node-ipv4`: globally and locally.
 
-### Globally
+## Globally
 
 * ### `-V` or `--version`: output the version number
 ```bash
 $ node-ipv4 --version
-1.0.1
+1.1.1
 ```
 
 * ### `-h` or `--help`: output usage information
@@ -103,7 +103,7 @@ IPv4 {
      hexadecimal: 'C0A80101' } }
 ```
 
-### Locally
+## Locally
 
 ```javascript
 'use strict';
@@ -117,7 +117,7 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 });
 ```
 
-### Output
+## Output
 
 ```json
 {
@@ -150,15 +150,15 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 }
 ```
 
-## Documentation
+# Documentation
 
-### Class: Address
+## Class: Address
 * `value`: {Number} Decimal value of an address
 * `address`: {String} String value of an address
 * `binary`: {String} Binary value of an address
 * `hexadecimal`: {String} Hexadecimal value of an address
 
-### Class: IPv4
+## Class: IPv4
 * `cidr`: {Number} CIDR block
 * `size`: {Number} Size of subnet
 * `address`: {Object:Address} The input address
@@ -166,14 +166,14 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 * `first`: {Object:Address} The first address
 * `last`: {Object:Address} The last address
 
-### API: parse([address, cidr, callback])
+## API: parse([address, cidr, callback])
 * `address` {String} IP address
 * `cidr` {Number} CIDR block
 * `callback` {Function}
   * `err` {Error | null} Error
   * `ipv4` {Object:IPv4} Instance of `IPv4`
 
-## Development
+# Development
 
 * Install [Node.js](https://nodejs.org)
 * Install [npm](https://www.npmjs.com/)
@@ -193,7 +193,7 @@ $ npm install
 * Running scripts
 
 Action | Usage
----    | ---
+------ | -----
 Starting development mode                | `npm start`
 Linting code                             | `npm run lint`
 Running unit tests                       | `npm run jest`
@@ -201,10 +201,12 @@ Running code coverage                    | `npm run coverage`
 Running lint + tests                     | `npm test`
 Sending coverage results to Coveralls.io | `npm run coveralls`
 
-## Author
+# Author
+
 [Roberto Achar](https://twitter.com/RobertoAchar)
 
-## License
+# License
+
 [MIT](https://github.com/robertoachar/node-ipv4/blob/master/LICENSE)
 
 [travis-badge]: https://travis-ci.org/robertoachar/node-ipv4.svg?branch=master
