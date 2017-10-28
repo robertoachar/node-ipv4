@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports.isCidr = (cidr) => {
   if (typeof cidr !== 'number') return false;
 

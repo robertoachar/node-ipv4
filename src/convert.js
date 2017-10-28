@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports.toBinary = (value) => {
   return value.toString(2);
 };

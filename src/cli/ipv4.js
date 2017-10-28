@@ -2,8 +2,6 @@
 
 /* eslint no-console: 0 */
 
-'use strict';
-
 const program = require('commander');
 
 const ipv4 = require('../index');
