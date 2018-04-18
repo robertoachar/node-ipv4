@@ -1,6 +1,6 @@
 {
   "name": "node-ipv4",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A package to calculate subnet masks.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-ipv4#readme",
@@ -26,7 +26,6 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "jest": "jest --colors --verbose",
     "lint": "eslint src/**/*.js test/**/*.js",
-    "start": "nodemon sample/sample.js",
     "test": "npm run lint && npm run jest"
   },
   "repository": {
@@ -37,14 +36,18 @@
     "url": "https://github.com/robertoachar/node-ipv4/issues"
   },
   "dependencies": {
-    "commander": "2.11.0"
+    "commander": "2.15.1"
   },
   "devDependencies": {
-    "@types/jest": "21.1.5",
+    "@types/jest": "22.2.3",
     "coveralls": "3.0.0",
-    "eslint": "4.10.0",
-    "jest": "21.2.1",
-    "nodemon": "1.12.1"
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "jest": "22.4.3",
+    "prettier": "1.12.1"
   },
   "license": "MIT"
 }

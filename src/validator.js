@@ -1,7 +1,7 @@
 module.exports.isCidr = (cidr) => {
   if (typeof cidr !== 'number') return false;
 
-  return (cidr >= 0 && cidr <= 32);
+  return cidr >= 0 && cidr <= 32;
 };
 
 module.exports.isIp = (address) => {
@@ -12,5 +12,5 @@ module.exports.isIp = (address) => {
 
   const match = address.match(regex);
 
-  return (match ? true : false);
+  return !!match;
 };

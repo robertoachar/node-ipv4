@@ -34,7 +34,7 @@ $ node-ipv4 --version
 To install locally:
 
 ```bash
-$ npm install --save node-ipv4
+$ npm install node-ipv4
 ```
 
 # Usage
@@ -44,12 +44,14 @@ There are two ways to use `node-ipv4`: globally and locally.
 ## Globally
 
 * ### `-V` or `--version`: output the version number
+
 ```bash
 $ node-ipv4 --version
-1.1.1
+1.1.2
 ```
 
 * ### `-h` or `--help`: output usage information
+
 ```bash
 $ node-ipv4 --help
 
@@ -68,52 +70,51 @@ $ node-ipv4 --help
 
 ```bash
 # without alias
-$ node-ipv4 --ip 192.168.1.1 --cidr 32
+$ node-ipv4 --ip 192.168.1.1 --cidr 8
 
 # with alias
-$ node-ipv4 -i 192.168.1.1 -c 32
+$ node-ipv4 -i 192.168.1.1 -c 8
 
 # output
-IPv4 {
-  cidr: 32,
-  size: 1,
-  address:
-   Address {
-     value: 3232235777,
-     address: '192.168.1.1',
-     binary: '11000000101010000000000100000001',
-     hexadecimal: 'C0A80101' },
-  netmask:
-   Address {
-     value: 4294967295,
-     address: '255.255.255.255',
-     binary: '11111111111111111111111111111111',
-     hexadecimal: 'FFFFFFFF' },
-  first:
-   Address {
-     value: 3232235777,
-     address: '192.168.1.1',
-     binary: '11000000101010000000000100000001',
-     hexadecimal: 'C0A80101' },
-  last:
-   Address {
-     value: 3232235777,
-     address: '192.168.1.1',
-     binary: '11000000101010000000000100000001',
-     hexadecimal: 'C0A80101' } }
+{
+  "cidr": 8,
+  "size": 16777216,
+  "address": {
+    "value": 3232235777,
+    "address": "192.168.1.1",
+    "binary": "11000000101010000000000100000001",
+    "hexadecimal": "C0A80101"
+  },
+  "netmask": {
+    "value": 4278190080,
+    "address": "255.0.0.0",
+    "binary": "11111111000000000000000000000000",
+    "hexadecimal": "FF000000"
+  },
+  "first": {
+    "value": 3221225472,
+    "address": "192.0.0.0",
+    "binary": "11000000000000000000000000000000",
+    "hexadecimal": "C0000000"
+  },
+  "last": {
+    "value": 3238002687,
+    "address": "192.255.255.255",
+    "binary": "11000000111111111111111111111111",
+    "hexadecimal": "C0FFFFFF"
+  }
+}
 ```
 
 ## Locally
 
 ```javascript
-'use strict';
+const ipv4 = require('node-ipv4');
 
-var ipv4 = require('node-ipv4');
+ipv4.parse('192.168.1.1', 16, (err, subnet) => {
+  if (err) return console.error(err);
 
-ipv4.parse('192.168.1.1', 16, function (err, subnet) {
-    if (err) return console.error(err);
-
-    console.log(subnet);
+  console.log(subnet);
 });
 ```
 
@@ -152,13 +153,15 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 
 # Documentation
 
-## Class: Address
+## Address
+
 * `value`: {Number} Decimal value of an address
 * `address`: {String} String value of an address
 * `binary`: {String} Binary value of an address
 * `hexadecimal`: {String} Hexadecimal value of an address
 
-## Class: IPv4
+## IPv4
+
 * `cidr`: {Number} CIDR block
 * `size`: {Number} Size of subnet
 * `address`: {Object:Address} The input address
@@ -166,7 +169,8 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
 * `first`: {Object:Address} The first address
 * `last`: {Object:Address} The last address
 
-## API: parse([address, cidr, callback])
+## API: parse(address, cidr, callback)
+
 * `address` {String} IP address
 * `cidr` {Number} CIDR block
 * `callback` {Function}
@@ -174,9 +178,6 @@ ipv4.parse('192.168.1.1', 16, function (err, subnet) {
   * `ipv4` {Object:IPv4} Instance of `IPv4`
 
 # Development
-
-* Install [Node.js](https://nodejs.org)
-* Install [npm](https://www.npmjs.com/)
 
 * Clone the repo
 
@@ -192,14 +193,13 @@ $ npm install
 
 * Running scripts
 
-Action | Usage
------- | -----
-Starting development mode                | `npm start`
-Linting code                             | `npm run lint`
-Running unit tests                       | `npm run jest`
-Running code coverage                    | `npm run coverage`
-Running lint + tests                     | `npm test`
-Sending coverage results to Coveralls.io | `npm run coveralls`
+| Action                                   | Usage               |
+| ---------------------------------------- | ------------------- |
+| Linting code                             | `npm run lint`      |
+| Running unit tests                       | `npm run jest`      |
+| Running code coverage                    | `npm run coverage`  |
+| Running lint + tests                     | `npm test`          |
+| Sending coverage results to Coveralls.io | `npm run coveralls` |
 
 # Author
 
@@ -211,18 +211,13 @@ Sending coverage results to Coveralls.io | `npm run coveralls`
 
 [travis-badge]: https://travis-ci.org/robertoachar/node-ipv4.svg?branch=master
 [travis-url]: https://travis-ci.org/robertoachar/node-ipv4
-
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/robertoachar/node-ipv4?branch=master&svg=true
 [appveyor-url]: https://ci.appveyor.com/project/robertoachar/node-ipv4
-
 [circleci-badge]: https://circleci.com/gh/robertoachar/node-ipv4/tree/master.svg?style=shield
 [circleci-url]: https://circleci.com/gh/robertoachar/node-ipv4
-
 [coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-ipv4/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/robertoachar/node-ipv4?branch=master
-
 [npm-badge]: https://img.shields.io/npm/v/node-ipv4.svg
 [npm-url]: https://www.npmjs.com/package/node-ipv4
-
 [license-badge]: https://img.shields.io/github/license/robertoachar/node-ipv4.svg
 [license-url]: https://opensource.org/licenses/MIT
