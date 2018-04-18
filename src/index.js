@@ -1,16 +1,31 @@
-const IPv4 = require('./ipv4');
-const validator = require('./validator');
+const { isCidr, isIp } = require('./validator');
+const { toAddress, toDecimal } = require('./convert');
 
-module.exports.parse = (address, cidr, done) => {
-  if (!validator.isIp(address)) {
-    return done('Invalid address');
+module.exports.parse = (ip, cidr, done) => {
+  if (!isIp(ip)) {
+    return done('Invalid ip');
   }
 
-  if (!validator.isCidr(cidr)) {
+  if (!isCidr(cidr)) {
     return done('Invalid cidr');
   }
 
-  const ipv4 = IPv4(address, cidr);
+  const MAX_CIDR = 32;
+
+  const address = toDecimal(ip);
+  const size = 2 ** (MAX_CIDR - cidr);
+  const netmask = 2 ** MAX_CIDR - size;
+  const first = (address & netmask) >>> 0;
+  const last = (address | ~netmask) >>> 0;
+
+  const ipv4 = {
+    cidr,
+    size,
+    address: toAddress(address),
+    netmask: toAddress(netmask),
+    first: toAddress(first),
+    last: toAddress(last)
+  };
 
   return done(null, ipv4);
 };
