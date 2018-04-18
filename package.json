@@ -18,9 +18,7 @@
   ],
   "bin": "src/cli/ipv4.js",
   "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "coverage": "jest --colors --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
@@ -42,7 +40,10 @@
     "@types/jest": "22.2.3",
     "coveralls": "3.0.0",
     "eslint": "4.19.1",
-    "jest": "22.4.3"
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "jest": "22.4.3",
+    "prettier": "1.12.1"
   },
   "license": "MIT"
 }
