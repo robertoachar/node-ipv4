@@ -77,9 +77,9 @@ describe('TESTS', () => {
     });
   });
 
-  describe('IPv4 Tests', function() {
-    it('192.168.1.1/8', function(done) {
-      lib.parse('192.168.1.1', 8, function(err, ipv4) {
+  describe('IPv4 Tests', () => {
+    it('192.168.1.1/8', (done) => {
+      lib.parse('192.168.1.1', 8, (err, ipv4) => {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -110,8 +110,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/16', function(done) {
-      lib.parse('192.168.1.1', 16, function(err, ipv4) {
+    it('192.168.1.1/16', (done) => {
+      lib.parse('192.168.1.1', 16, (err, ipv4) => {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -142,8 +142,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/24', function(done) {
-      lib.parse('192.168.1.1', 24, function(err, ipv4) {
+    it('192.168.1.1/24', (done) => {
+      lib.parse('192.168.1.1', 24, (err, ipv4) => {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -174,8 +174,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/32', function(done) {
-      lib.parse('192.168.1.1', 32, function(err, ipv4) {
+    it('192.168.1.1/32', (done) => {
+      lib.parse('192.168.1.1', 32, (err, ipv4) => {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 

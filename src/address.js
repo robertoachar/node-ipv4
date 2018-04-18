@@ -1,10 +1,9 @@
-const convert = require('./convert');
+const { toBinary, toBytes, toHexadecimal } = require('./convert');
 
-function Address(value) {
-  this.value = value;
-  this.address = convert.toBytes(value);
-  this.binary = convert.toBinary(value);
-  this.hexadecimal = convert.toHexadecimal(value);
-}
+module.exports = (value) => {
+  const address = toBytes(value);
+  const binary = toBinary(value);
+  const hexadecimal = toHexadecimal(value);
 
-module.exports = Address;
+  return { value, address, binary, hexadecimal };
+};

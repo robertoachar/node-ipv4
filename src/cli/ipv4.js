@@ -15,9 +15,11 @@ program
 
 if (program.ip && program.cidr) {
   ipv4.parse(program.ip, +program.cidr, (err, address) => {
-    if (err) return console.error(err);
+    if (err) {
+      return console.error(err);
+    }
 
-    console.log(address);
+    return console.log(address);
   });
 } else {
   program.help();

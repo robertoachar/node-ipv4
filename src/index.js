@@ -10,7 +10,7 @@ module.exports.parse = (address, cidr, done) => {
     return done('Invalid cidr');
   }
 
-  const ipv4 = new IPv4(address, cidr);
+  const ipv4 = IPv4(address, cidr);
 
   return done(null, ipv4);
 };
