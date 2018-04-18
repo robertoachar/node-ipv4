@@ -19,7 +19,6 @@ if (program.ip && program.cidr) {
 
     console.log(address);
   });
-}
-else {
+} else {
   program.help();
 }

@@ -17,7 +17,7 @@ module.exports.toBytes = (value) => {
 module.exports.toDecimal = (address) => {
   const octet = address.split('.');
 
-  return ((((((+octet[0]) * 256) + (+octet[1])) * 256) + (+octet[2])) * 256) + (+octet[3]);
+  return ((+octet[0] * 256 + +octet[1]) * 256 + +octet[2]) * 256 + +octet[3];
 };
 
 module.exports.toHexadecimal = (value) => {

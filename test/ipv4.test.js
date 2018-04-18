@@ -1,9 +1,7 @@
 const lib = require('../src/index');
 
 describe('TESTS', () => {
-
   describe('Addresss Validation Tests', () => {
-
     test('should not be able to parse with an undefined address', (done) => {
       lib.parse(undefined, 32, (err, subnet) => {
         expect(err).toBeDefined();
@@ -39,11 +37,9 @@ describe('TESTS', () => {
         done();
       });
     });
-
   });
 
   describe('Cidr Validation Tests', () => {
-
     test('should not be able to parse with an undefined cidr', (done) => {
       lib.parse('192.168.1.1', undefined, (err, subnet) => {
         expect(err).toBeDefined();
@@ -79,13 +75,11 @@ describe('TESTS', () => {
         done();
       });
     });
-
   });
 
-  describe('IPv4 Tests', function () {
-
-    it('192.168.1.1/8', function (done) {
-      lib.parse('192.168.1.1', 8, function (err, ipv4) {
+  describe('IPv4 Tests', function() {
+    it('192.168.1.1/8', function(done) {
+      lib.parse('192.168.1.1', 8, function(err, ipv4) {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -116,8 +110,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/16', function (done) {
-      lib.parse('192.168.1.1', 16, function (err, ipv4) {
+    it('192.168.1.1/16', function(done) {
+      lib.parse('192.168.1.1', 16, function(err, ipv4) {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -148,8 +142,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/24', function (done) {
-      lib.parse('192.168.1.1', 24, function (err, ipv4) {
+    it('192.168.1.1/24', function(done) {
+      lib.parse('192.168.1.1', 24, function(err, ipv4) {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -180,8 +174,8 @@ describe('TESTS', () => {
       });
     });
 
-    it('192.168.1.1/32', function (done) {
-      lib.parse('192.168.1.1', 32, function (err, ipv4) {
+    it('192.168.1.1/32', function(done) {
+      lib.parse('192.168.1.1', 32, function(err, ipv4) {
         expect(err).toBeNull();
         expect(ipv4).toBeDefined();
 
@@ -211,7 +205,5 @@ describe('TESTS', () => {
         done();
       });
     });
-
   });
-
 });
