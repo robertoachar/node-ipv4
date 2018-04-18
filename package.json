@@ -1,6 +1,6 @@
 {
   "name": "node-ipv4",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A package to calculate subnet masks.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-ipv4#readme",
@@ -18,7 +18,9 @@
   ],
   "bin": "src/cli/ipv4.js",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "coverage": "jest --colors --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
