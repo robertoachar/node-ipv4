@@ -3,36 +3,36 @@ const lib = require('../src/index');
 describe('TESTS', () => {
   describe('Addresss Validation Tests', () => {
     test('should not be able to parse with an undefined address', (done) => {
-      lib.parse(undefined, 32, (err, subnet) => {
+      lib.parse(undefined, 32, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with a null address', (done) => {
-      lib.parse(null, 32, (err, subnet) => {
+      lib.parse(null, 32, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with an empty address', (done) => {
-      lib.parse('', 32, (err, subnet) => {
+      lib.parse('', 32, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with an invalid address', (done) => {
-      lib.parse('1', 32, (err, subnet) => {
+      lib.parse('1', 32, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
@@ -41,36 +41,36 @@ describe('TESTS', () => {
 
   describe('Cidr Validation Tests', () => {
     test('should not be able to parse with an undefined cidr', (done) => {
-      lib.parse('192.168.1.1', undefined, (err, subnet) => {
+      lib.parse('192.168.1.1', undefined, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with a null cidr', (done) => {
-      lib.parse('192.168.1.1', null, (err, subnet) => {
+      lib.parse('192.168.1.1', null, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with a NaN cidr', (done) => {
-      lib.parse('192.168.1.1', 'a', (err, subnet) => {
+      lib.parse('192.168.1.1', 'a', (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
     });
 
     test('should not be able to parse with an invalid cidr', (done) => {
-      lib.parse('192.168.1.1', 33, (err, subnet) => {
+      lib.parse('192.168.1.1', 33, (err, ipv4) => {
         expect(err).toBeDefined();
-        expect(subnet).toBeUndefined();
+        expect(ipv4).toBeUndefined();
 
         done();
       });
